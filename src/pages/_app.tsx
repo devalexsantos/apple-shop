@@ -1,6 +1,21 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import { globalStyles } from "@/styles/global";
+import { Container, Header } from "@/styles/pages/app";
+import type { AppProps } from "next/app";
+import Image from "next/image";
+import logoIgnite from "../assets/logo.svg";
+import Link from "next/link";
+
+globalStyles();
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <Container>
+      <Header>
+        <Link href="/">
+          <Image src={logoIgnite} alt="" />
+        </Link>
+      </Header>
+      <Component {...pageProps} />
+    </Container>
+  );
 }
