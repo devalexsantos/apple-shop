@@ -42,8 +42,6 @@ export const Header = styled("header", {
       right: -10,
       backgroundColor: "$green500",
       border: "1px solid $gray800",
-
-      span: {},
     },
   },
 });

@@ -10,7 +10,8 @@ interface ShopCartContextProps {
     price: string,
     name: string,
     imageUrl: string,
-    priceUnit: number
+    priceUnit: number,
+    defaultPriceId: string
   ) => void;
 }
 
@@ -21,6 +22,7 @@ export interface ProductType {
   name: string;
   imageUrl: string;
   priceUnit: number;
+  defaultPriceId: string;
 }
 
 export const ShopCartContext = createContext({} as ShopCartContextProps);
@@ -49,7 +51,8 @@ export function ShopCartProvider({ children }) {
     price: string,
     name: string,
     imageUrl: string,
-    priceUnit: number
+    priceUnit: number,
+    defaultPriceId: string
   ) {
     const newCartList = [...products];
 
@@ -65,6 +68,7 @@ export function ShopCartProvider({ children }) {
         name: name,
         imageUrl: imageUrl,
         priceUnit: priceUnit,
+        defaultPriceId: defaultPriceId,
       });
     }
 

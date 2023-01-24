@@ -52,6 +52,11 @@ export const ProductInfoContainer = styled("div", {
   },
 });
 
+export const ImageContainer = styled("div", {
+  background: "linear-gradient(180deg, #1ea483 0%, #7465d4 100%)",
+  borderRadius: 8,
+});
+
 export const ResumeContainer = styled("div", {
   marginTop: "auto",
   display: "flex",
@@ -70,13 +75,14 @@ export const ResumeContainer = styled("div", {
 
   button: {
     marginTop: "3.5rem",
-    padding: "1.25rem",
+    padding: "1rem 1.25rem",
     borderRadius: 8,
     border: "none",
     backgroundColor: "$green500",
     color: "$gray100",
     fontSize: "$md",
     fontWeight: "bold",
-    cursor: "pointer",
+    textAlign: "center",
+    textDecoration: "none",
   },
 });

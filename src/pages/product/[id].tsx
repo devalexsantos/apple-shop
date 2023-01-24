@@ -39,9 +39,10 @@ export default function Product({ product, stateDrawer }: ProductProps) {
     price: string,
     name: string,
     imageUrl: string,
-    priceUnit: number
+    priceUnit: number,
+    defaultPriceId: string
   ) {
-    addProductCart(id, price, name, imageUrl, priceUnit);
+    addProductCart(id, price, name, imageUrl, priceUnit, defaultPriceId);
     stateDrawer(true);
   }
 
@@ -94,7 +95,8 @@ export default function Product({ product, stateDrawer }: ProductProps) {
                 product.price,
                 product.name,
                 product.imageUrl,
-                product.priceUnit
+                product.priceUnit,
+                product.defaultPriceId
               )
             }
           >

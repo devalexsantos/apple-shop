@@ -1,7 +1,8 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ShopCartContext } from "@/contexts/ShopCart";
 import {
   ChartDrawerContainer,
+  ImageContainer,
   ProductContainer,
   ProductInfoContainer,
   ResumeContainer,
@@ -9,6 +10,7 @@ import {
 import Drawer from "@mui/material/Drawer";
 import Image from "next/image";
 import { X } from "phosphor-react";
+import axios from "axios";
 
 interface ChartDrawerProps {
   state: boolean;
@@ -18,6 +20,9 @@ interface ChartDrawerProps {
 export function ChartDrawer({ state, changeState }: ChartDrawerProps) {
   const { products, amount, quantity, removeProductCart } =
     useContext(ShopCartContext);
+
+  const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] =
+    useState(false);
 
   const toggleDrawer =
     (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -32,13 +37,29 @@ export function ChartDrawer({ state, changeState }: ChartDrawerProps) {
       changeState();
     };
 
+  async function handleCheckout() {
+    try {
+      setIsCreatingCheckoutSession(true);
+      const response = await axios.post("/api/checkout", {
+        productsList: products,
+      });
+
+      const { checkoutUrl } = response.data;
+
+      window.location.href = checkoutUrl;
+    } catch {
+      setIsCreatingCheckoutSession(false);
+      alert("Falha ao redirecionar ao checkout!");
+    }
+  }
+
   return (
     <Drawer anchor="right" open={state} onClose={toggleDrawer(false)}>
       {products.length === 0 ? (
         <ChartDrawerContainer>
           <p>Nenhum produto no carrinho...</p>
           <ResumeContainer>
-            <button>Ir as Compras</button>
+            <button onClick={toggleDrawer(false)}>Ir as Compras</button>
           </ResumeContainer>
         </ChartDrawerContainer>
       ) : (
@@ -51,7 +72,14 @@ export function ChartDrawer({ state, changeState }: ChartDrawerProps) {
           <h2>Sacola de compras</h2>
           {products.map((product) => (
             <ProductContainer key={product.id}>
-              <Image src={product.imageUrl} width={101.94} height={93} alt="" />
+              <ImageContainer>
+                <Image
+                  src={product.imageUrl}
+                  width={101.94}
+                  height={93}
+                  alt=""
+                />
+              </ImageContainer>
               <ProductInfoContainer>
                 <p>{product.name}</p>
                 <span>{product.price}</span>
@@ -77,7 +105,12 @@ export function ChartDrawer({ state, changeState }: ChartDrawerProps) {
                 }).format((amount as number) / 100)}
               </span>
             </div>
-            <button>Finalizar compra</button>
+            <button
+              onClick={handleCheckout}
+              disabled={isCreatingCheckoutSession}
+            >
+              Finalizar compra
+            </button>
           </ResumeContainer>
         </ChartDrawerContainer>
       )}

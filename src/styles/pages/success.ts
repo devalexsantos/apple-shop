@@ -35,11 +35,7 @@ export const SuccessContainer = styled("main", {
 });
 
 export const ImageContainer = styled("main", {
-  width: "100%",
-  maxWidth: 130,
-  height: 145,
-  background: "linear-gradient(180deg, #1ea483 0%, #7465d4 100%)",
-  borderRadius: 8,
+  backgroundSize: "cover",
   padding: "0.25rem",
   marginTop: "4rem",
 
@@ -49,5 +45,32 @@ export const ImageContainer = styled("main", {
 
   img: {
     objectFit: "cover",
+    maxWidth: 150,
+    height: 150,
+    background: "linear-gradient(180deg, #1ea483 0%, #7465d4 100%)",
+    borderRadius: "50%",
+    margin: "0px -20px",
+    "-webkit-box-shadow": "-3px 1px 5px 1px rgba(0,0,0,0.68)",
+    "-moz-box-shadow": "-3px 1px 5px 1px rgba(0,0,0,0.68)",
+    "box-shadow": "-3px 1px 5px 1px rgba(0,0,0,0.68)",
+  },
+
+  "div.image_content": {
+    position: "relative",
+  },
+
+  "div.quantity_product": {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    position: "absolute",
+    borderRadius: "50%",
+    backgroundSize: "cover",
+    width: "26px",
+    height: "26px",
+    bottom: 0,
+    left: 0,
+    backgroundColor: "$green500",
+    border: "1px solid $gray800",
   },
 });
