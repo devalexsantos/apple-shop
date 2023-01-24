@@ -10,8 +10,9 @@ import Image from "next/image";
 
 import { useRouter } from "next/router";
 import axios from "axios";
-import { useState } from "react";
+import { useContext } from "react";
 import Head from "next/head";
+import { ShopCartContext } from "@/contexts/ShopCart";
 
 interface ProductProps {
   product: {
@@ -21,16 +22,30 @@ interface ProductProps {
     imageUrl: string;
     price: string;
     defaultPriceId: string;
+    priceUnit: number;
   };
+  stateDrawer: (state: boolean) => void;
 }
 
-export default function Product({ product }: ProductProps) {
+export default function Product({ product, stateDrawer }: ProductProps) {
   const { isFallback } = useRouter();
+  const { addProductCart } = useContext(ShopCartContext);
 
-  const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] =
-    useState(false);
+  /*const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] =
+    useState(false);*/
 
-  async function handleBuyProduct() {
+  function handleAddCartProduct(
+    id: string,
+    price: string,
+    name: string,
+    imageUrl: string,
+    priceUnit: number
+  ) {
+    addProductCart(id, price, name, imageUrl, priceUnit);
+    stateDrawer(true);
+  }
+
+  /*async function handleBuyProduct() {
     try {
       setIsCreatingCheckoutSession(true);
       const response = await axios.post("/api/checkout", {
@@ -45,6 +60,7 @@ export default function Product({ product }: ProductProps) {
       alert("Falha ao redirecionar ao checkout!");
     }
   }
+  */
 
   if (isFallback) {
     return <p>Loading...</p>;
@@ -72,10 +88,17 @@ export default function Product({ product }: ProductProps) {
           </p>
 
           <button
-            disabled={isCreatingCheckoutSession}
-            onClick={handleBuyProduct}
+            onClick={() =>
+              handleAddCartProduct(
+                product.id,
+                product.price,
+                product.name,
+                product.imageUrl,
+                product.priceUnit
+              )
+            }
           >
-            Comprar Agora
+            Adicionar ao carrinho
           </button>
         </ProductDetails>
       </ProductContainer>
@@ -134,6 +157,7 @@ export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
           currency: "BRL",
         }).format((price.unit_amount as number) / 100),
         defaultPriceId: price.id,
+        priceUnit: price.unit_amount as number,
       },
     },
     revalidate: 60 * 60 * 1, //  1hour

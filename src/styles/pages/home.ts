@@ -28,19 +28,32 @@ export const Product = styled("div", {
     bottom: "0.25rem",
     left: "0.25rem",
     right: "0.25rem",
-    padding: "2rem",
+    padding: "1rem 2rem",
 
     borderRadius: 6,
 
     display: "flex",
-    alignItems: "center",
     justifyContent: "space-between",
-
+    alignItems: "center",
     backgroundColor: "rgba(0, 0, 0, 0.6)",
 
     transform: "translateY(110%)",
     opacity: 0,
     transition: "all 0.2s ease-in-out",
+
+    div: {
+      display: "flex",
+      flexDirection: "column",
+    },
+
+    button: {
+      backgroundColor: "$green500",
+      border: 0,
+      color: "$gray100",
+      padding: "0.75rem",
+      borderRadius: 6,
+      cursor: "pointer",
+    },
 
     strong: {
       fontSize: "$md",
