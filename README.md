@@ -1,38 +1,69 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Apple Shop - Loja Fictícia de Produtos Apple</h1>
 
-## Getting Started
+<p align="center">Criação de um e-commerce rápido de produtos Apple com carrinho de compras e integração com o Stripe para pagamentos.</p>
 
-First, run the development server:
+<div align="center">
+  <h3> 🚀 Publicado 🚀 </h3>
+  <strong><a href="https://apple-shop-alex-santos.vercel.app/" target="_blank">🔗 Visualize o projeto clicando aqui</a></strong>
+</div>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+# Sumário
+-[Funcionalidades](#funcionalidades) <br/>
+-[Imagens](#imagens)<br/>
+-[Tecnologias](#tecnologias)<br/>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<a id="funcionalidades"></a>
+# Funcionalidades
+- [x] Vitrine de Produtos, consumindo Stripe API
+- [x] Slide Carrossel na Vitrine de Produtos
+- [x] Adição de Produto ao carrinho direto da Vitrine
+- [x] Contagem de Produtos no Carrinho
+- [x] Modal Lateral com Visualização de detalhes do carrinho e edição do mesmo
+- [X] Cálculo de Valor Total do Pedido
+- [X] Finalização de compra pelo Stripe
+- [x] Redirecionamento para a página de Compra Realizada com informações do Pedido - (utilize um cartão de testes do Stripe para verificar)
+- [ ] Responsividade para o mobile
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<a id="imagens"></a>
+# Imagens
+<div id="images" align="center">
+<img alt="Login Industria" title="Alex - Apple Shop" src="./apple-shop-home.gif" width="640px" />
+</div>
+<div id="images" align="center">
+<img alt="Login Industria" title="Alex - Apple Shop" src="./apple-shop-home.png" width="640px" />
+</div>
+<div id="images" align="center">
+<img alt="Login Industria" title="Alex - Apple Shop" src="./apple-shop-product.png" width="640px" />
+</div>
+<div id="images" align="center">
+<img alt="Login Industria" title="Alex - Apple Shop" src="./apple-shop-stripe.png" width="640px" />
+</div>
+<div id="images" align="center">
+<img alt="Login Industria" title="Alex - Apple Shop" src="./apple-shop-success.png" width="640px" />
+</div>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+<a id="tecnologias"></a>
+# Tecnologias
+As ferramentas utilizadas foram:
+<ul style="list-style: none">
+  <li>React com o Next.js</li>
+  <li>Typescript</li>
+  <li>Stripe</li>
+  <li>Axios</li>
+  <li>Material Ui</li>
+  <li>Stitches Styling</li>
+  <li>Keen Slider</li>
+  <li>Phosphor Icons</li>
+  <li>React Router</li>
+</ul>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<div align="center">
+  <h3> 🚀 Publicado 🚀 </h3>
+  <strong><a href="https://apple-shop-alex-santos.vercel.app/" target="_blank">🔗 Visualize o projeto clicando aqui</a></strong>
+</div>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<a id="autor"></a>
+# Autor
+<div style="display: flex; flex-direction: column; justify-content: center">
+<a href="https://github.com/devalexsantos">Alex Santos</a>
+</div>
