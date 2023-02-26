@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { globalStyles } from "@/styles/global";
-import { Container, Header } from "@/styles/pages/app";
+import { Container, Footer, Header } from "@/styles/pages/app";
 import type { AppProps } from "next/app";
 import Image from "next/image";
 import logoIgnite from "../assets/logo.svg";
@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Container>
         <Header>
           <Link href="/">
-            <Image src={logoIgnite} alt="" />
+            <h1>Apple Shop</h1>
           </Link>
           <ShopCartButton handleSetDrawerState={handleSetDrawerState} />
           <ChartDrawer
@@ -34,6 +34,8 @@ export default function App({ Component, pageProps }: AppProps) {
         </Header>
         <Component {...pageProps} stateDrawer={handleSetDrawerState} />
       </Container>
+      <Footer>Est loja é fictícia e foi criada para fins de estudos - Com amor 🖤
+Alex Santos</Footer>
     </ShopCartProvider>
   );
 }

@@ -17,6 +17,14 @@ export const Header = styled("header", {
   maxWidth: 1180,
   margin: "0 auto",
 
+  "a": {
+    textDecoration: "none"
+  },
+
+  "h1":{
+    color: "white",
+  },
+
   "div.button_shop_cart": {
     position: "relative",
     button: {
@@ -45,3 +53,13 @@ export const Header = styled("header", {
     },
   },
 });
+
+export const Footer = styled("footer", {
+  marginTop: "4rem",
+  marginBottom: "4rem",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  padding: "5px 10px",
+  borderRadius: "6px"
+})
