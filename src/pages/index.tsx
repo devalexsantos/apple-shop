@@ -60,7 +60,7 @@ export default function Home({ products, stateDrawer }: HomeProps) {
   return (
     <>
       <Head>
-        <title>Ignite Shop</title>
+        <title>Apple Shop</title>
       </Head>
 
       <HomeContainer ref={sliderRef} className="navigation-wrapper">
