@@ -79,7 +79,7 @@ export default function Product({ product, stateDrawer }: ProductProps) {
         </ImageContainer>
         <ProductDetails>
           <h1>{product.name}</h1>
-          <span>R$ 79,90</span>
+          <span>{product.price}</span>
 
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum quia
@@ -114,6 +114,21 @@ export const getStaticPaths: GetStaticPaths = async () => {
       {
         params: {
           id: "prod_NQaidAQ3MliQig",
+        },
+      },
+      {
+        params: {
+          id: "prod_NQbMy8aWtInnjZ",
+        },
+      },
+      {
+        params: {
+          id: "prod_NQbQiE5QPCP9mb",
+        },
+      },
+      {
+        params: {
+          id: "prod_NQbUcZWXT2A5Bt",
         },
       },
     ],

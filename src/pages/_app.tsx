@@ -34,7 +34,7 @@ export default function App({ Component, pageProps }: AppProps) {
         </Header>
         <Component {...pageProps} stateDrawer={handleSetDrawerState} />
       </Container>
-      <Footer>Est loja é fictícia e foi criada para fins de estudos - Com amor 🖤
+      <Footer>Esta loja é fictícia e foi criada para fins de estudos - Com amor 🖤
 Alex Santos</Footer>
     </ShopCartProvider>
   );
